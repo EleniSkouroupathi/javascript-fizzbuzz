@@ -1,22 +1,59 @@
-describe('FizzBuzz', function(){
+describe('Fizzbuzz',function() {
 
-  var fizzbuzz = function(){};
+  var javabuzz;
 
-  describe('knows when to fizzbuzz', function(){
+  beforeEach(function() {
+    javabuzz = new Fizzbuzz();
+  });
 
-    it('knows when to fizzbuzz', function(){
-      fizzbuzz = new fizzBuzz();
-      expect(fizzBuzz.prototype.isDivisibleByThreeAndFive(15)).toBe(true);
+  describe('knows when a number is',function() {
+
+    it('divisible by three',function() {
+      expect(javabuzz.isDivisibleByThree(3)).toBe(true);
+
     });
 
-    it('knows when to fizz', function(){
-      fizzbuzz = new fizzBuzz();
-      expect(fizzBuzz.prototype.isDivisibleByThree(3)).toBe(true);
+    it('divisible by five',function() {
+      expect(javabuzz.isDivisibleByFive(5)).toBe(true);
     });
 
-    it('knows when to buzz', function(){
-      fizzbuzz = new fizzBuzz();
-      expect(fizzBuzz.prototype.isDivisibleByFive(5)).toBe(true);
+    it('divisible by fifteen',function() {
+      expect(javabuzz.isDivisibleByFifteen(15)).toBe(true);
+
+    });
+
+  });
+
+  describe('knows when a number is NOT',function() {
+
+    it('divisible by three',function() {
+      expect(javabuzz.isDivisibleByThree(1)).toBe(false);
+
+    });
+
+    it('divisible by five',function() {
+      expect(javabuzz.isDivisibleByFive(1)).toBe(false);
+    });
+
+    it('divisible by fifteen',function() {
+      expect(javabuzz.isDivisibleByFifteen(1)).toBe(false);
+
+    });
+
+  });
+
+  describe('when playing, says',function() {
+
+    it('"Fizz" when divisible by 3',function() {
+      expect(javabuzz.says(3)).toEqual("Fizz");
+    });
+
+    it('"Fizz" when divisible by 5',function() {
+      expect(javabuzz.says(5)).toEqual("Buzz");
+    });
+
+    it('"Fizz" when divisible by 15',function() {
+      expect(javabuzz.says(15)).toEqual("Fizzbuzz");
     });
 
   });
